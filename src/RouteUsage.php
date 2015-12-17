@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class RouteUsage extends Model
 {
-    protected $fillable = ['path'];
+    protected $fillable = ['path', 'method'];
 }

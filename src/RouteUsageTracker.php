@@ -15,7 +15,7 @@ class RouteUsageTracker
      */
     public function handle($request, Closure $next)
     {
-        RouteUsage::create(['path' => $request->path()]);
+        RouteUsage::create(['path' => $request->path(), 'method' => $request->method()]);
 
         return $next($request);
     }

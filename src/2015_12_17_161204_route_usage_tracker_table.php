@@ -12,6 +12,8 @@ class RouteUsageTrackerTable extends Migration
 
             $table->string('path');
 
+            $table->string('method');
+
             $table->timestamps();
         });
     }
