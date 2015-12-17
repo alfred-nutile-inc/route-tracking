@@ -1,0 +1,32 @@
+{
+  "name": "alfred-nutile-inc/route-tracking",
+  "description": "Route Tracking",
+  "authors": [
+    {
+      "name": "Alfred Nutile Inc",
+      "email": "me@alfrednutile.info"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "illuminate/support": "*",
+    "illuminate/contracts": "*",
+    "illuminate/console": "*",
+    "illuminate/filesystem": "*"
+  },
+  "require-dev": {
+    "mockery/mockery": "*",
+    "phpunit/phpunit": "~4.0",
+    "fzaninotto/faker": "1.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AlfredNutileInc\\RouteTracking\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  }
+}
