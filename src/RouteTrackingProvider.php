@@ -4,17 +4,18 @@
 namespace AlfredNutileInc\RouteTracking;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
 
 class RouteTrackingProvider extends ServiceProvider
 {
 
 
-    public function boot()
+    public function boot(Application $app)
     {
-        $this->publishes([
-            __DIR__.'/2015_12_17_161204_route_usage_tracker_table.php' =>
-                database_path('migrations'),
-        ]);
+        $source = realpath( __DIR__.'/migrations/');
+        if ($app->runningInConsole()) {
+            $this->publishes([$source => database_path('migrations')], 'migrations');
+        }
     }
 
     /**
