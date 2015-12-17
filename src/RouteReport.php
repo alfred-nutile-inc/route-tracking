@@ -58,7 +58,7 @@ class RouteReport extends Command
         {
             $report = RouteUsage::select('path', 'method', 'created_at')->orderBy('created_at', "DESC")->get();
 
-            $this->table($this->headers, $report->toArray()['data']);
+            $this->table($this->headers, $report->toArray());
         }
 
     }
