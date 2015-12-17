@@ -15,7 +15,7 @@ class RouteReport extends Command
     protected $signature = 'route:report {page?} {--count} {--clean} ';
 
     protected $headers          = ['Path', 'Date'];
-    protected $headers_count    = ['count', 'Path'];
+    protected $headers_count    = ['Count', 'Path',  'Method'];
     /**
      * The console command description.
      *
@@ -56,7 +56,7 @@ class RouteReport extends Command
         }
         else
         {
-            $report = RouteUsage::select('path', 'created_at')->orderBy('created_at', "DESC")->get();
+            $report = RouteUsage::select('path', 'method', 'created_at')->orderBy('created_at', "DESC")->get();
 
             $this->table($this->headers, $report->toArray()['data']);
         }
